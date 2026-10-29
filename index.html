@@ -86,6 +86,51 @@ h1 span{color:var(--green);text-shadow:0 0 24px #4cff3c44}
 footer{border-color:#1a5738}
 @media(max-width:760px){.hero{padding-top:35px}.hero:before{inset:0;border-radius:20px}.scene{min-height:230px}.stats{grid-template-columns:1fr}}
 
+
+/* Full visual overhaul: cinematic GolabiCraft roleplay landing page */
+:root{--bg:#050912;--panel:#0b1522;--green:#8dff5b;--muted:#b2c2d1;--line:#244153}
+body{background:#050912;color:#f5f9ff;background-image:radial-gradient(ellipse at 50% -15%,#244b71 0,transparent 48%),linear-gradient(#050912,#08111b 60%,#050912);background-attachment:fixed}
+header{background:#050912d9;border-bottom:1px solid #77d9ff35;box-shadow:0 10px 35px #0005}
+.logo{border-radius:13px;background:linear-gradient(135deg,#d7ff91,#4bffb0);box-shadow:0 0 28px #5effb444}
+.links{color:#c0d1e2}.links a:hover{color:#8dff5b}
+.btn{border-radius:11px;border-color:#3a5d72;background:linear-gradient(140deg,#172b40,#0a1624);color:#f5fbff;box-shadow:0 7px 20px #0003;transition:all .22s}
+.btn.primary{background:linear-gradient(120deg,#c9ff79,#55f9a4);border:0;color:#07120d;box-shadow:0 0 30px #69ff9a33}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px #5effb42a}
+.hero{position:relative;isolation:isolate;grid-template-columns:1fr .9fr;gap:30px;padding:65px 25px 42px;border-radius:26px;margin-top:24px}
+.hero:before{content:"";position:absolute;z-index:-1;inset:0;border:1px solid #72d8ff55;border-radius:26px;background:linear-gradient(90deg,#050912f7 0%,#07111be8 38%,#07111b88 65%,#07111b35 100%),url('./assets/golabi-city.svg') center/cover no-repeat;box-shadow:0 20px 80px #0008}
+.hero:after{content:"GOLABI CRAFT  •  ROLEPLAY CITY";position:absolute;z-index:-1;left:25px;bottom:14px;color:#d4ffac77;font-size:.7rem;letter-spacing:4px;font-weight:900;direction:ltr}
+.pill{color:#d3ff9d;background:#8dff5b12;border-color:#8dff5b66;letter-spacing:.3px}
+h1{font-size:clamp(2.7rem,5.4vw,4.5rem);line-height:1.2;text-shadow:0 5px 25px #0009}
+h1 span{color:#9cff69;text-shadow:0 0 25px #8dff5b4d}
+.lead{color:#d0dce8;max-width:570px}
+.scene{min-height:370px;border-radius:22px;border:1px solid #81e8ff66;background:linear-gradient(180deg,#06111b22,#06111b60),url('./assets/golabi-city.svg') center/cover no-repeat;box-shadow:0 25px 65px #0009,inset 0 0 40px #8dff5b0b}
+.scene:before{content:"";width:190px;height:190px;border:1px solid #b8ff8b33;box-shadow:0 0 0 25px #8dff5b0a,0 0 0 50px #8dff5b07;transform:rotate(45deg)}
+.pear{filter:drop-shadow(0 0 28px #8dff5b66)}
+.badge{background:#06111beF;border-color:#8dff5b66;color:#c8ff9b}
+.stats{margin-top:20px}
+.stat,.card{background:linear-gradient(145deg,#122438,#09131f);border-color:#25445a;box-shadow:0 12px 32px #0004}
+.stat{border-radius:14px}.stat:hover,.card:hover{border-color:#8dff5b;box-shadow:0 15px 35px #54ffc51b}
+.icon{filter:drop-shadow(0 0 8px #8dff5b22)}
+section{scroll-margin-top:90px}
+.heading h2,.players-caption h2{letter-spacing:-.4px}
+.heading h2:after{content:"";display:block;width:58px;height:3px;margin-top:7px;border-radius:5px;background:linear-gradient(90deg,#8dff5b,#5ce9ff)}
+.card{border-radius:18px;min-height:145px}
+.tag{color:#d2ff9b;background:#8dff5b12;border:1px solid #8dff5b33}
+.vehicle-weapon-row .side-visual,.player-card{border-color:#284c62;background:linear-gradient(145deg,#13273b,#07111d)}
+.side-visual{border-radius:18px}
+.adventure-panel{border-color:#3a7b79;background:radial-gradient(ellipse at 85% 0%,#174b54,transparent 52%),linear-gradient(135deg,#112a3a,#08121e);box-shadow:0 20px 55px #0005}
+.mission-box{background:#06111ddf;border-color:#376273}
+.mission-chip{color:#caff9e;border-color:#8dff5b4d;background:#8dff5b13}
+.treasure-section,.treasure-card{border-color:#2d6170}
+.treasure-card{background:linear-gradient(145deg,#142b3b,#08121d)}
+.treasure-card:hover,.treasure-card.opened{border-color:#9cff69;box-shadow:0 0 25px #8dff5b22}
+.banner{border-color:#47766d;background:linear-gradient(110deg,#173b45,#0b1722)}
+.faq-item{background:#0b1926;border-color:#24475b}
+footer{border-color:#294557;color:#aabed0}
+a,h1,h2,h3,p,strong,span,small,.brand,.btn,.tag,.pill,.stat,.card{transition:transform .2s ease,color .2s ease,box-shadow .2s ease}
+a:hover,h1:hover,h2:hover,h3:hover,.brand:hover{color:#baff8c}
+@media(max-width:760px){.hero{padding:32px 16px 30px;grid-template-columns:1fr;margin-top:14px;gap:20px}.hero:after{font-size:.55rem;letter-spacing:2px}.scene{min-height:245px}.stats,.grid{grid-template-columns:1fr}.hero:before{background:linear-gradient(180deg,#050912eb,#07111bce 55%,#07111b99),url('./assets/golabi-city.svg') center/cover no-repeat}h1{font-size:2.65rem}}
+
 </style></head><body>
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div><header><div class="wrap nav"><a class="brand" href="./"><span class="logo">🍐</span>گلابی کرفت</a><nav class="links"><a href="./">صفحه اصلی</a><a href="./features.html">امکانات سرور</a><a href="./city.html">شهر گلابی</a><a href="./shop.html">فروشگاه</a><a href="./security.html">امنیت</a></nav><div style="display:flex;gap:8px;align-items:center"><a class="btn" href="./admin/">🔐 پنل مدیریت</a></div></div></header>
 <main class="wrap"><section class="hero"><div><span class="pill">🍃 ماینکرفت Roleplay • گلابی کرفت</span><h1>یه شهر بزرگ،<br><span>یه عالمه ماجرا!</span></h1><p class="lead">به گلابی کرفت خوش اومدی؛ وارد دنیایی شو که می‌تونی توی شهر بگردی، با ماشین‌ها رانندگی کنی، با بقیه بازیکن‌ها آشنا بشی و داستان شخصیت خودت رو بسازی.</p><div class="actions"><a class="btn" href="./features.html">🎮 دیدن امکانات سرور</a></div></div><div class="scene"><div class="pear-split" role="button" tabindex="0" aria-pressed="false" aria-label="گلابی دوبعدی؛ برای جدا شدن کلیک کن"><span class="half left">🍐</span><span class="half right">🍐</span></div><div class="badge">GOLABI CRAFT • ROLEPLAY</div></div></section>
