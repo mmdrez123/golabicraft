@@ -7,7 +7,7 @@
 <style>
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#183c22,#080e09 65%);color:#f4fff5;font-family:Vazirmatn,Tahoma,sans-serif;min-height:100vh;padding:22px}.wrap{max-width:900px;margin:35px auto}.hero,.card{background:#102018;border:1px solid #2c5736;border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:0 12px 30px #0003}.hero{text-align:center;border-color:#65ff98}.pear{font-size:54px}h1,h2{color:#8bffa8}.muted{color:#c0d5c4;line-height:2}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.btn{display:block;text-align:center;padding:13px 15px;border-radius:11px;background:#65ff98;color:#07130b;font-weight:900;text-decoration:none;margin-top:14px}.secondary{background:#182c1e;color:#eaffed;border:1px solid #386445}.warning{border-right:4px solid #ffcf69}.tag{display:inline-block;background:#173c23;color:#8bffa8;border-radius:20px;padding:3px 11px}footer{text-align:center;color:#a6bba9;margin-top:25px;font-size:13px}@media(max-width:500px){body{padding:12px}.hero,.card{padding:18px}}
 .login-gate{min-height:calc(100vh - 44px);display:grid;place-items:center}.login-box{width:min(440px,100%);padding:28px;border:1px solid #65ff98;border-radius:22px;background:#102018;box-shadow:0 18px 55px #0007;text-align:center}.login-box .pear{font-size:52px}.login-box h1{font-size:1.5rem}.login-box p{color:#c0d5c4}.login-box label{display:block;text-align:right;margin-top:18px}.login-box input{width:100%;margin-top:8px;padding:13px;border-radius:10px;border:1px solid #386445;background:#08110b;color:#fff;font:inherit;direction:ltr;text-align:left}.login-box .btn{width:100%;border:0;cursor:pointer;font:inherit;margin-top:16px}.login-error{color:#ff9d9d!important;min-height:1.5em}.login-home{display:inline-block;margin-top:8px;color:#b8ffc8}</style></head>
-<body><div id="loginGate" class="login-gate"><form id="loginForm" class="login-box"><div class="pear">🍐</div><h1>ورود به پنل گلابی کرفت</h1><p>برای ورود، رمز مدیریت رو وارد کن.</p><label for="adminPassword">رمز عبور</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="رمز پنل..." required><button class="btn" type="submit">🔐 ورود به پنل</button><p id="loginError" class="login-error" role="alert"></p><a class="login-home" href="../">بازگشت به سایت اصلی</a></form></div><main id="adminDashboard" class="wrap" hidden>
+<body><div id="loginGate" class="login-gate"><form id="loginForm" class="login-box" onsubmit="return loginAdmin(event)"><div class="pear">🍐</div><h1>ورود به پنل گلابی کرفت</h1><p>برای ورود، رمز مدیریت رو وارد کن.</p><label for="adminPassword">رمز عبور</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="رمز پنل..." required><button class="btn" type="submit">🔐 ورود به پنل</button><p id="loginError" class="login-error" role="alert"></p><a class="login-home" href="../">بازگشت به سایت اصلی</a></form></div><main id="adminDashboard" class="wrap" hidden>
 <header class="hero"><div class="pear">🍐</div><h1>پنل مدیریت گلابی کرفت</h1><p>داشبورد مدیریت سایت و محتوای سرور</p><span class="tag">نسخه اولیه</span></header>
 <section class="grid">
 <article class="card"><h2>🌐 مشاهده سایت</h2><p class="muted">صفحه عمومی گلابی کرفت را باز کن و ظاهر فعلی را ببین.</p><a class="btn" href="../" target="_blank" rel="noopener">باز کردن سایت</a></article>
@@ -17,26 +17,38 @@
 <section class="card warning"><h2>🔐 نکته امنیتی مهم</h2><p class="muted">این صفحه یک داشبورد لینک‌دار است، نه سیستم ورود مستقل. دسترسی و ذخیره تغییرات را GitHub کنترل می‌کند؛ فقط به افرادی که در مخزن مجوز نوشتن می‌دهی اجازه ویرایش بده. رمز عبور یا توکن GitHub را داخل HTML قرار نده. تغییرات صفحه اصلی را پس از ویرایش در GitHub با Commit changes ثبت کن؛ سپس GitHub Pages آن‌ها را منتشر می‌کند.</p></section>
 <footer>🍐 گلابی کرفت • مدیریت از طریق مجوزهای GitHub</footer>
 </main><script>
-(function(){
- const form=document.getElementById('loginForm');
+function loginAdmin(event){
+ if(event) event.preventDefault();
  const gate=document.getElementById('loginGate');
  const dashboard=document.getElementById('adminDashboard');
+ const input=document.getElementById('adminPassword');
  const error=document.getElementById('loginError');
- form.addEventListener('submit',function(event){
-  event.preventDefault();
-  if(document.getElementById('adminPassword').value.replace(/\s+/g,'')==='mmdrez1392'){
+ try{
+  const normalized=input.value
+   .replace(/[۰-۹]/g,d=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(d))
+   .replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d))
+   .replace(/\s+/g,'')
+   .toLowerCase();
+  if(normalized==='mmdrez1392'){
    gate.hidden=true;
    dashboard.hidden=false;
-   sessionStorage.setItem('golabiAdminUnlocked','yes');
+   error.textContent='';
+   try{sessionStorage.setItem('golabiAdminUnlocked','yes')}catch(storageError){}
   }else{
-   error.textContent='رمز اشتباهه؛ دوباره امتحان کن.';
-   document.getElementById('adminPassword').value='';
-   document.getElementById('adminPassword').focus();
+   error.textContent='رمز درست نیست؛ حروف انگلیسی و عددهای 1392 را بررسی کن.';
+   input.focus();
   }
- });
- if(sessionStorage.getItem('golabiAdminUnlocked')==='yes'){
-  gate.hidden=true;
-  dashboard.hidden=false;
+ }catch(e){
+  error.textContent='ورود اجرا نشد. صفحه را با Ctrl+F5 تازه‌سازی کن.';
  }
+ return false;
+}
+(function(){
+ try{
+  if(sessionStorage.getItem('golabiAdminUnlocked')==='yes'){
+   document.getElementById('loginGate').hidden=true;
+   document.getElementById('adminDashboard').hidden=false;
+  }
+ }catch(e){}
 })();
 </script></body></html>
