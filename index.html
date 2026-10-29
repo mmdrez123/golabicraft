@@ -43,32 +43,20 @@ body.light-mode .faq-item{background:#fff;color:#142317}
 .toast-message{position:fixed;right:50%;bottom:22px;transform:translate(50%,20px);opacity:0;pointer-events:none;z-index:30;background:#d8ffbd;color:#102015;border:1px solid #7fce6d;border-radius:14px;padding:10px 17px;font-weight:800;box-shadow:0 12px 35px #0004;transition:.25s}
 .toast-message.show{opacity:1;transform:translate(50%,0)}
 @media(max-width:760px){.theme-toggle{display:none}}
+
+/* Requested classic flat pear: 2D halves with a straight split; effects kept calm */
+.pear-split{position:relative;width:190px;height:190px;z-index:1;overflow:visible;filter:none;perspective:none;transform:none;transform-style:flat;cursor:pointer}
+.pear-split:before{content:"";position:absolute;z-index:-1;left:30%;right:30%;bottom:7px;height:16px;border-radius:50%;background:#0004;filter:blur(8px)}
+.pear-split .half{position:absolute;inset:0;display:grid;place-items:center;font-size:8rem;line-height:1;transition:transform .25s ease;transform:none;filter:none;transform-style:flat}
+.pear-split .left{clip-path:inset(0 50% 0 0)}
+.pear-split .right{clip-path:inset(0 0 0 50%)}
+.pear-split:hover .left,.pear-split.is-split .left{transform:translateX(-10px)}
+.pear-split:hover .right,.pear-split.is-split .right{transform:translateX(10px)}
+.pear-split .pear-hint{display:none}
+@media(prefers-reduced-motion:reduce){.pear-split .half{transition:none}}
 </style></head><body>
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div><header><div class="wrap nav"><a class="brand" href="./"><span class="logo">🍐</span>گلابی کرفت</a><nav class="links"><a href="./">صفحه اصلی</a><a href="./features.html">امکانات سرور</a><a href="./city.html">شهر گلابی</a><a href="./shop.html">فروشگاه</a><a href="./security.html">امنیت</a></nav><div style="display:flex;gap:8px;align-items:center"><button class="btn theme-toggle" id="themeToggle" type="button" aria-label="تغییر پوسته">☀️ پوسته روشن</button><a class="btn" href="./admin/">🔐 پنل مدیریت</a></div></div></header>
-<main class="wrap"><section class="hero"><div><span class="pill">🍃 ماینکرفت Roleplay • گلابی کرفت</span><h1>یه شهر بزرگ،<br><span>یه عالمه ماجرا!</span></h1><p class="lead">به گلابی کرفت خوش اومدی؛ وارد دنیایی شو که می‌تونی توی شهر بگردی، با ماشین‌ها رانندگی کنی، با بقیه بازیکن‌ها آشنا بشی و داستان شخصیت خودت رو بسازی.</p><div class="actions"><a class="btn" href="./features.html">🎮 دیدن امکانات سرور</a></div></div><div class="scene"><div class="pear-split" role="button" tabindex="0" aria-pressed="false" aria-label="برای دو تکه کردن گلابی کلیک کن"><span class="pear-hint">🍐 روش کلیک کن!</span>
-<svg viewBox="0 0 220 235" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<defs>
-<linearGradient id="pearLeft" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e5ff82"/><stop offset=".42" stop-color="#a8e83e"/><stop offset="1" stop-color="#3e9b32"/></linearGradient>
-<linearGradient id="pearRight" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9ff76"/><stop offset=".5" stop-color="#83cf31"/><stop offset="1" stop-color="#267b2b"/></linearGradient>
-<linearGradient id="cutFace" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f4ffd0"/><stop offset=".5" stop-color="#d7f4a0"/><stop offset="1" stop-color="#8fcf55"/></linearGradient>
-<linearGradient id="stemGrad" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#5a3218"/><stop offset=".5" stop-color="#a96c35"/><stop offset="1" stop-color="#4c2915"/></linearGradient>
-</defs>
-<ellipse cx="110" cy="218" rx="48" ry="8" fill="#000" opacity=".22"/>
-<g class="half left">
-<path d="M109 24 C94 38 88 48 85 60 C60 68 42 91 37 119 C28 155 49 193 77 207 C87 213 97 216 109 216 L108 201 L100 192 L109 181 L101 169 L111 157 L103 145 L112 132 L103 119 L111 106 L103 94 L112 81 L104 68 L112 55 Z" fill="url(#pearLeft)" stroke="#4c8c2c" stroke-width="2" stroke-linejoin="round"/>
-<path d="M109 24 C94 38 88 48 85 60 C60 68 42 91 37 119 C28 155 49 193 77 207 C87 213 97 216 109 216" fill="none" stroke="#eaff9b" stroke-width="2.5" opacity=".65"/>
-<path class="shine" d="M72 91 C55 111 52 139 61 158" fill="none" stroke="#f4ffc8" stroke-width="7" stroke-linecap="round" opacity=".32"/>
-</g>
-<g class="half right">
-<path d="M111 24 C126 38 132 48 135 60 C160 68 178 91 183 119 C192 155 171 193 143 207 C133 213 123 216 111 216 L112 201 L120 192 L111 181 L119 169 L109 157 L117 145 L108 132 L117 119 L109 106 L117 94 L108 81 L116 68 L108 55 Z" fill="url(#pearRight)" stroke="#4c8c2c" stroke-width="2" stroke-linejoin="round"/>
-<path d="M111 24 C126 38 132 48 135 60 C160 68 178 91 183 119 C192 155 171 193 143 207 C133 213 123 216 111 216" fill="none" stroke="#eaff9b" stroke-width="2.5" opacity=".5"/>
-<path class="shine" d="M148 94 C164 113 166 136 157 156" fill="none" stroke="#f4ffc8" stroke-width="5" stroke-linecap="round" opacity=".18"/>
-</g>
-<path d="M108 31 Q104 17 113 8" fill="none" stroke="url(#stemGrad)" stroke-width="8" stroke-linecap="round"/>
-<path d="M111 18 Q129 2 145 13 Q133 29 111 23Z" fill="#5fc74a" stroke="#347b2b" stroke-width="1.5"/>
-<path d="M114 21 Q128 15 140 13" fill="none" stroke="#b8f57a" stroke-width="1.5" opacity=".8"/>
-<path d="M109 24 L112 55 L104 68 L112 81 L103 94 L111 106 L103 119 L112 132 L103 145 L111 157 L101 169 L109 181 L100 192 L108 201 L109 216" fill="none" stroke="url(#cutFace)" stroke-width="3.5" stroke-linejoin="round"/>
-</svg></div><div class="badge">GOLABI CRAFT • ROLEPLAY</div></div></section>
+<main class="wrap"><section class="hero"><div><span class="pill">🍃 ماینکرفت Roleplay • گلابی کرفت</span><h1>یه شهر بزرگ،<br><span>یه عالمه ماجرا!</span></h1><p class="lead">به گلابی کرفت خوش اومدی؛ وارد دنیایی شو که می‌تونی توی شهر بگردی، با ماشین‌ها رانندگی کنی، با بقیه بازیکن‌ها آشنا بشی و داستان شخصیت خودت رو بسازی.</p><div class="actions"><a class="btn" href="./features.html">🎮 دیدن امکانات سرور</a></div></div><div class="scene"><div class="pear-split" role="button" tabindex="0" aria-pressed="false" aria-label="گلابی دوبعدی؛ برای جدا شدن کلیک کن"><span class="half left">🍐</span><span class="half right">🍐</span></div><div class="badge">GOLABI CRAFT • ROLEPLAY</div></div></section>
 <div class="stats"><div class="stat"><span class="icon">🏙️</span><div><strong>شهر بزرگ و دیدنی</strong><span class="muted">برای گشت‌وگذار و کشف جاهای تازه</span></div></div><div class="stat"><span class="icon">🚘</span><div><strong>ماشین و رانندگی</strong><span class="muted">دور شهر بچرخ و مسیرت رو پیدا کن</span></div></div><div class="stat"><span class="icon">🎭</span><div><strong>نقش‌آفرینی</strong><span class="muted">شخصیت خودت رو بساز و بازی کن</span></div></div></div>
 <div class="players-row" aria-label="بازیکن‌های ماینکرفت"><div class="player-card"><img src="https://minotar.net/armor/body/Steve/180.png" alt="بازیکن استیو در ماینکرفت" loading="lazy"><strong>STEVE</strong></div><div class="players-caption"><h2>قهرمان‌های گلابی کرفت 🍐</h2><p>دنیای ماینکرفت، آمادهٔ ماجراجویی!</p></div><div class="player-card"><img src="https://minotar.net/armor/body/Alex/180.png" alt="بازیکن الکس در ماینکرفت" loading="lazy"><strong>ALEX</strong></div></div>
 <section><div class="heading"><h2>گلابی کرفت چه چیزهایی داره؟ 🍐</h2><p>صفحه‌های مختلف سایت رو ببین و با دنیای سرور آشنا شو.</p></div><div class="grid"><article class="card"><span class="tag">🏙️ شهر</span><h3>شهر بزرگ برای کشف کردن</h3><p>کوچه‌ها و خیابون‌ها رو بگرد، جاهای تازه پیدا کن و با بازیکن‌های دیگه تعامل داشته باش.</p></article><article class="card"><span class="tag">🚗 وسایل نقلیه</span><h3>ماشین‌ها و رانندگی</h3><p>با ماشین در شهر رفت‌وآمد کن و حس زندگی در یک شهر ماینکرفتی رو تجربه کن.</p></article><article class="card"><span class="tag">🧑‍🤝‍🧑 جامعه</span><h3>داستانی که خودت می‌سازی</h3><p>با دوستانت تیم شو، برای شخصیتت هدف تعیین کن و ماجراجویی تازه‌ای شروع کن.</p></article></div></section>
@@ -91,7 +79,7 @@ const topButton=document.createElement('button');topButton.className='back-top';
 function updateScrollUI(){const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?(scrollY/max)*100:0)+'%';topButton.classList.toggle('visible',scrollY>420)}
 addEventListener('scroll',updateScrollUI,{passive:true});addEventListener('resize',updateScrollUI);topButton.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));updateScrollUI();
 (()=>{const rewards=['🍀 یک شب خوش‌شانسی!','💎 ۳ الماس خیالی پیدا کردی!','🧪 معجون سرعت نصیبت شد!','🪙 ۵۰ سکهٔ خیالی گرفتی!','🗡️ شمشیر افسانه‌ای پیدا کردی!','🍐 نشان ویژهٔ گلابی کرفت مال تو شد!'];const cards=[...document.querySelectorAll('.treasure-card')],result=document.getElementById('treasureResult');let opened=false;cards.forEach(card=>card.addEventListener('click',()=>{if(opened){result.textContent='این مرحله رو قبلاً بازی کردی؛ برای شانس دوباره صفحه رو تازه کن!';return;}opened=true;card.classList.add('opened');card.querySelector('.chest').textContent='✨';result.textContent='جایزه‌ات: '+rewards[Math.floor(Math.random()*rewards.length)];cards.filter(x=>x!==card).forEach(x=>{x.disabled=true;x.style.opacity='.48';});}));})();
-(()=>{for(let i=0;i<9;i++){const orb=document.createElement('span');orb.className='floating-orb';orb.style.left=(7+Math.random()*86)+'%';orb.style.top=(15+Math.random()*75)+'%';orb.style.animationDelay=(-Math.random()*12)+'s';orb.style.animationDuration=(9+Math.random()*9)+'s';document.body.appendChild(orb);}})();
+
 
 (()=>{const missions=['یک خانهٔ کوچک و قشنگ در ماینکرفت بساز.','یک جای مخفی برای گنج پیدا کن.','با چوب و سنگ ابزارهای تازه بساز.','یک باغ پر از گل و درخت درست کن.','از یک کوه بلند بالا برو و منظره را تماشا کن.','یک مسیر امن بین خانه و معدن بساز.','یک حیوان را به مزرعه‌ات هدایت کن.'];const text=document.getElementById('missionText'),done=document.getElementById('missionDone');let current=localStorage.getItem('golabiMission')||'';let score=Number(localStorage.getItem('golabiMissionScore')||0);if(current)text.textContent=current;document.getElementById('newMission').addEventListener('click',()=>{let next=missions[Math.floor(Math.random()*missions.length)];if(missions.length>1&&next===current)next=missions[(missions.indexOf(next)+1)%missions.length];current=next;localStorage.setItem('golabiMission',current);text.textContent=current;done.textContent='';});document.getElementById('completeMission').addEventListener('click',()=>{if(!current){done.textContent='اول یه مأموریت انتخاب کن!';return;}score++;localStorage.setItem('golabiMissionScore',String(score));done.textContent='آفرین! '+score+' مأموریت ثبت کردی. 🏆';current='';localStorage.removeItem('golabiMission');text.textContent='عالی بود! برای چالش بعدی مأموریت جدید بگیر.';});})();
 </script></body></html>
