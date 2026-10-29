@@ -48,7 +48,45 @@ a,h1,h2,h3,p,strong,span,small,.brand,.btn,.tag,.pill,.stat,.card{transition:tra
 .pear-split:hover .right,.pear-split.is-split .right{transform:translateX(10px)}
 .pear-split .pear-hint{display:none}
 @media(prefers-reduced-motion:reduce){.pear-split .half{transition:none}}
-.inventory-panel{margin:22px 0 12px;padding:18px;border:1px solid #3c5e40;border-radius:18px;background:#08110b}.inventory-panel h3{margin:0 0 12px;color:var(--green)}.inventory-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.inventory-item{display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 6px;background:#142219;border:1px solid #2a4430;border-radius:14px}.inventory-item span{font-size:1.5rem}.inventory-item strong{font-size:1.25rem;color:var(--green)}.inventory-item small,.inventory-note{color:var(--muted)}.inventory-note{font-size:.8rem;margin:12px 0 0}@media(max-width:500px){.inventory-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}</style></head><body>
+.inventory-panel{margin:22px 0 12px;padding:18px;border:1px solid #3c5e40;border-radius:18px;background:#08110b}.inventory-panel h3{margin:0 0 12px;color:var(--green)}.inventory-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.inventory-item{display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 6px;background:#142219;border:1px solid #2a4430;border-radius:14px}.inventory-item span{font-size:1.5rem}.inventory-item strong{font-size:1.25rem;color:var(--green)}.inventory-item small,.inventory-note{color:var(--muted)}.inventory-note{font-size:.8rem;margin:12px 0 0}@media(max-width:500px){.inventory-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* GOLABI CRAFT neon cinematic redesign */
+:root{--bg:#020b09;--panel:#071a17;--green:#62ff39;--muted:#c0d7d0;--line:#14533b}
+body{background:radial-gradient(ellipse at 50% -10%,#12482f 0,transparent 45%),linear-gradient(180deg,#020b09,#03110f 55%,#020807);background-attachment:fixed}
+header{background:#020a09eF;border-bottom:1px solid #27d95d55;box-shadow:0 6px 30px #0008}
+.logo{background:linear-gradient(135deg,#b9ff85,#4bff38);box-shadow:0 0 22px #58ff3833}
+.btn{border:1px solid #24663b;background:linear-gradient(135deg,#10271c,#07150f);box-shadow:inset 0 1px #ffffff12;transition:transform .2s,box-shadow .2s,background .2s}
+.btn.primary,.actions .btn:first-child{background:linear-gradient(135deg,#a4ff65,#42f52e);color:#061006;border-color:#70ff49;box-shadow:0 0 25px #52ff3833}
+.btn:hover{box-shadow:0 0 25px #56ff4444;transform:translateY(-3px)}
+.hero{position:relative;isolation:isolate;gap:26px;padding:56px 0 34px}
+.hero:before{content:"";position:absolute;z-index:-1;inset:10px -20px 0;border-radius:28px;background:linear-gradient(90deg,#020b09 0%,#03110be8 38%,#03110b44 75%,#020b0966),radial-gradient(ellipse at 80% 30%,#ff9a4d44,transparent 45%);border:1px solid #1b593a66}
+h1{font-size:clamp(2.6rem,5vw,4.4rem);text-shadow:0 5px 25px #000b}
+h1 span{color:var(--green);text-shadow:0 0 24px #4cff3c44}
+.pill{color:#b8ff9b;border-color:#4cff3c66;background:#37ff3510}
+.scene{min-height:350px;border:1px solid #4aff6155;border-radius:24px;background:linear-gradient(135deg,#071c16dd,#09130fe0),radial-gradient(circle at 70% 20%,#ff9d54,transparent 60%);box-shadow:0 15px 55px #0009,inset 0 0 45px #42ff2a0a}
+.scene:after{content:"🏙️ 🌆 🚘";position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(2.2rem,5vw,4.8rem);letter-spacing:5px;opacity:.28;filter:drop-shadow(0 0 16px #4cff3c)}
+.pear-split{z-index:2}
+.badge{border-color:#4cff3c55;box-shadow:0 0 20px #4cff3c1f}
+.stats{gap:12px}
+.stat,.card,.player-card{background:linear-gradient(145deg,#0b211aee,#06110e);border-color:#15543a;box-shadow:0 12px 30px #0004}
+.stat{border-radius:16px}
+.stat:hover,.card:hover{border-color:#5bff4b;box-shadow:0 12px 32px #22ff3820}
+.heading h2,.players-caption h2{color:#f2fff2}
+.card{border-radius:17px}
+.tag{color:#b7ff9b;background:#39ff3513;border:1px solid #43ff3928}
+.vehicle-weapon-row,.players-row{filter:drop-shadow(0 12px 22px #0003)}
+.player-card{border-radius:18px}
+.adventure-panel{border-color:#1a7545;background:radial-gradient(ellipse at 5% 0%,#174f2d,transparent 55%),linear-gradient(135deg,#061a14,#020b09);box-shadow:0 15px 45px #0005}
+.mission-box{border-color:#246342;background:#03100c}
+.mission-chip{color:#b9ff9e;border-color:#47ff4938}
+.treasure-section{border-color:#1d7546;background:radial-gradient(ellipse at 85% 0%,#174d28,transparent 50%),#06120d}
+.treasure-card{border-color:#19583a;background:linear-gradient(145deg,#0b2118,#030b08)}
+.treasure-card:hover,.treasure-card.opened{border-color:#67ff45;box-shadow:0 0 22px #4cff3c1c}
+.faq-item{background:#071710;border-color:#155139}
+.banner{background:linear-gradient(110deg,#0d351d,#06120d);border-color:#2a7842}
+footer{border-color:#1a5738}
+@media(max-width:760px){.hero{padding-top:35px}.hero:before{inset:0;border-radius:20px}.scene{min-height:230px}.stats{grid-template-columns:1fr}}
+
+</style></head><body>
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div><header><div class="wrap nav"><a class="brand" href="./"><span class="logo">🍐</span>گلابی کرفت</a><nav class="links"><a href="./">صفحه اصلی</a><a href="./features.html">امکانات سرور</a><a href="./city.html">شهر گلابی</a><a href="./shop.html">فروشگاه</a><a href="./security.html">امنیت</a></nav><div style="display:flex;gap:8px;align-items:center"><a class="btn" href="./admin/">🔐 پنل مدیریت</a></div></div></header>
 <main class="wrap"><section class="hero"><div><span class="pill">🍃 ماینکرفت Roleplay • گلابی کرفت</span><h1>یه شهر بزرگ،<br><span>یه عالمه ماجرا!</span></h1><p class="lead">به گلابی کرفت خوش اومدی؛ وارد دنیایی شو که می‌تونی توی شهر بگردی، با ماشین‌ها رانندگی کنی، با بقیه بازیکن‌ها آشنا بشی و داستان شخصیت خودت رو بسازی.</p><div class="actions"><a class="btn" href="./features.html">🎮 دیدن امکانات سرور</a></div></div><div class="scene"><div class="pear-split" role="button" tabindex="0" aria-pressed="false" aria-label="گلابی دوبعدی؛ برای جدا شدن کلیک کن"><span class="half left">🍐</span><span class="half right">🍐</span></div><div class="badge">GOLABI CRAFT • ROLEPLAY</div></div></section>
 <div class="stats"><div class="stat"><span class="icon">🏙️</span><div><strong>شهر بزرگ و دیدنی</strong><span class="muted">برای گشت‌وگذار و کشف جاهای تازه</span></div></div><div class="stat"><span class="icon">🚘</span><div><strong>ماشین و رانندگی</strong><span class="muted">دور شهر بچرخ و مسیرت رو پیدا کن</span></div></div><div class="stat"><span class="icon">🎭</span><div><strong>نقش‌آفرینی</strong><span class="muted">شخصیت خودت رو بساز و بازی کن</span></div></div></div>
