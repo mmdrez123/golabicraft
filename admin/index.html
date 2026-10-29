@@ -1,23 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>پنل گلابی کرفت</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مدیریت گلابی کرفت</title>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:24px;font-family:Vazirmatn,sans-serif;color:#f2fff5;background:radial-gradient(circle at top,#174b2d,#07130c 65%)}main{max-width:850px;margin:35px auto}.hero,.card{background:#10251a;border:1px solid #28643d;border-radius:22px;padding:25px;margin-bottom:20px;box-shadow:0 12px 35px #0003;animation:show .7s ease both}.hero{text-align:center;border-color:#65ff98}.pear{font-size:64px;animation:float 3s ease-in-out infinite}h1{color:#65ff98;font-weight:900}h2{color:#9affb7}.muted{color:#c5ddcc;line-height:2}.address{direction:ltr;text-align:center;overflow-wrap:anywhere;padding:14px;background:#07130c;border:1px dashed #65ff98;border-radius:12px;margin:14px 0}button{font:700 15px Vazirmatn,sans-serif;border:0;border-radius:10px;padding:12px 18px;background:#65ff98;color:#07130c;cursor:pointer}button:hover{transform:translateY(-2px);box-shadow:0 0 18px #65ff9866}#message{color:#9affb7}footer{text-align:center;color:#a7c4af;padding:18px}@keyframes float{50%{transform:translateY(-10px)}}@keyframes show{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-</style>
-</head>
-<body><main>
-<header class="hero"><div class="pear">🍐</div><h1>گلابی کرفت</h1><p>دنیای ماجراجویی ماینکرفت تو اینجاست!</p><strong>وب‌سایت رسمی گلابی کرفت</strong></header>
-<section class="card"><h2>🎮 درباره سرور</h2><p class="muted">به گلابی کرفت خوش اومدی! با دوستانت ماجراجویی کن، بساز و از دنیای ماینکرفت لذت ببر. اطلاعات دقیق سرور را پس از آماده‌شدن اینجا اضافه می‌کنیم.</p></section>
-<section class="card"><h2>🌐 آدرس اتصال</h2><p class="muted">آدرس واقعی سرور هنوز وارد نشده است.</p><div class="address" id="serverAddress">آدرس سرور هنوز ثبت نشده</div><button onclick="copyAddress()">📋 کپی آدرس سرور</button><p id="message" aria-live="polite"></p></section>
-<section class="card"><h2>✨ امکانات</h2><p class="muted">🏡 ساخت‌وساز و ماجراجویی<br>⚔️ رقابت دوستانه<br>🌍 کشف دنیاهای جدید<br>🤝 بازی گروهی و همکاری<br>🎉 رویدادهای ماینکرفتی</p></section>
-<section class="card"><h2>📜 قوانین</h2><p class="muted">۱. به بازیکنان احترام بگذار.<br>۲. تقلب و خرابکاری نکن.<br>۳. قوانین اختصاصی سرور را رعایت کن.<br>۴. به ایجاد محیطی دوستانه کمک کن.</p></section>
-<footer>🍐 گلابی کرفت | ساخته‌شده با عشق به ماینکرفت</footer>
-</main>
-<script>
-async function copyAddress(){const address=document.getElementById('serverAddress').textContent.trim();const message=document.getElementById('message');if(!address||address==='آدرس سرور هنوز ثبت نشده'){message.textContent='⚠️ ابتدا باید آدرس واقعی سرور وارد شود.';return}try{await navigator.clipboard.writeText(address);message.textContent='✅ آدرس کپی شد!'}catch(e){message.textContent='لطفاً آدرس را دستی کپی کن.'}}
-</script></body></html>
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#183c22,#080e09 65%);color:#f4fff5;font-family:Vazirmatn,Tahoma,sans-serif;min-height:100vh;padding:22px}.wrap{max-width:900px;margin:35px auto}.hero,.card{background:#102018;border:1px solid #2c5736;border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:0 12px 30px #0003}.hero{text-align:center;border-color:#65ff98}.pear{font-size:54px}h1,h2{color:#8bffa8}.muted{color:#c0d5c4;line-height:2}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.btn{display:block;text-align:center;padding:13px 15px;border-radius:11px;background:#65ff98;color:#07130b;font-weight:900;text-decoration:none;margin-top:14px}.secondary{background:#182c1e;color:#eaffed;border:1px solid #386445}.warning{border-right:4px solid #ffcf69}.tag{display:inline-block;background:#173c23;color:#8bffa8;border-radius:20px;padding:3px 11px}footer{text-align:center;color:#a6bba9;margin-top:25px;font-size:13px}@media(max-width:500px){body{padding:12px}.hero,.card{padding:18px}}
+</style></head>
+<body><main class="wrap">
+<header class="hero"><div class="pear">🍐</div><h1>پنل مدیریت گلابی کرفت</h1><p>داشبورد مدیریت سایت و محتوای سرور</p><span class="tag">نسخه اولیه</span></header>
+<section class="grid">
+<article class="card"><h2>🌐 مشاهده سایت</h2><p class="muted">صفحه عمومی گلابی کرفت را باز کن و ظاهر فعلی را ببین.</p><a class="btn" href="../" target="_blank" rel="noopener">باز کردن سایت</a></article>
+<article class="card"><h2>📝 ویرایش صفحه اصلی</h2><p class="muted">برای تغییر واقعی فایل سایت، باید با حساب GitHub دارای مجوز نوشتن وارد شده باشی.</p><a class="btn" href="https://github.com/mmdrez123/golabicraft/edit/main/index.html" target="_blank" rel="noopener">ویرایش index.html در GitHub</a></article>
+<article class="card"><h2>📁 مدیریت فایل‌ها</h2><p class="muted">فایل‌ها، پوشه‌ها و تغییرات مخزن را از داشبورد GitHub مدیریت کن.</p><a class="btn secondary" href="https://github.com/mmdrez123/golabicraft" target="_blank" rel="noopener">رفتن به مخزن</a></article>
+</section>
+<section class="card warning"><h2>🔐 نکته امنیتی مهم</h2><p class="muted">این صفحه یک داشبورد لینک‌دار است، نه سیستم ورود مستقل. دسترسی و ذخیره تغییرات را GitHub کنترل می‌کند؛ فقط به افرادی که در مخزن مجوز نوشتن می‌دهی اجازه ویرایش بده. رمز عبور یا توکن GitHub را داخل HTML قرار نده. تغییرات صفحه اصلی را پس از ویرایش در GitHub با Commit changes ثبت کن؛ سپس GitHub Pages آن‌ها را منتشر می‌کند.</p></section>
+<footer>🍐 گلابی کرفت • مدیریت امن از طریق مجوزهای GitHub</footer>
+</main></body></html>
