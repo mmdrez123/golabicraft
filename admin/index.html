@@ -24,7 +24,7 @@
  const error=document.getElementById('loginError');
  form.addEventListener('submit',function(event){
   event.preventDefault();
-  if(document.getElementById('adminPassword').value==='mmdrez1392'){
+  if(document.getElementById('adminPassword').value.replace(/\s+/g,'')==='mmdrez1392'){
    gate.hidden=true;
    dashboard.hidden=false;
    sessionStorage.setItem('golabiAdminUnlocked','yes');
