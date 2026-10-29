@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>پنل گلابی کرفت</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:24px;font-family:Vazirmatn,sans-serif;color:#f2fff5;background:radial-gradient(circle at top,#174b2d,#07130c 65%)}main{max-width:850px;margin:35px auto}.hero,.card{background:#10251a;border:1px solid #28643d;border-radius:22px;padding:25px;margin-bottom:20px;box-shadow:0 12px 35px #0003;animation:show .7s ease both}.hero{text-align:center;border-color:#65ff98}.pear{font-size:64px;animation:float 3s ease-in-out infinite}h1{color:#65ff98;font-weight:900}h2{color:#9affb7}.muted{color:#c5ddcc;line-height:2}.address{direction:ltr;text-align:center;overflow-wrap:anywhere;padding:14px;background:#07130c;border:1px dashed #65ff98;border-radius:12px;margin:14px 0}button{font:700 15px Vazirmatn,sans-serif;border:0;border-radius:10px;padding:12px 18px;background:#65ff98;color:#07130c;cursor:pointer}button:hover{transform:translateY(-2px);box-shadow:0 0 18px #65ff9866}#message{color:#9affb7}footer{text-align:center;color:#a7c4af;padding:18px}@keyframes float{50%{transform:translateY(-10px)}}@keyframes show{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body><main>
+<header class="hero"><div class="pear">🍐</div><h1>گلابی کرفت</h1><p>دنیای ماجراجویی ماینکرفت تو اینجاست!</p><strong>وب‌سایت رسمی گلابی کرفت</strong></header>
+<section class="card"><h2>🎮 درباره سرور</h2><p class="muted">به گلابی کرفت خوش اومدی! با دوستانت ماجراجویی کن، بساز و از دنیای ماینکرفت لذت ببر. اطلاعات دقیق سرور را پس از آماده‌شدن اینجا اضافه می‌کنیم.</p></section>
+<section class="card"><h2>🌐 آدرس اتصال</h2><p class="muted">آدرس واقعی سرور هنوز وارد نشده است.</p><div class="address" id="serverAddress">آدرس سرور هنوز ثبت نشده</div><button onclick="copyAddress()">📋 کپی آدرس سرور</button><p id="message" aria-live="polite"></p></section>
+<section class="card"><h2>✨ امکانات</h2><p class="muted">🏡 ساخت‌وساز و ماجراجویی<br>⚔️ رقابت دوستانه<br>🌍 کشف دنیاهای جدید<br>🤝 بازی گروهی و همکاری<br>🎉 رویدادهای ماینکرفتی</p></section>
+<section class="card"><h2>📜 قوانین</h2><p class="muted">۱. به بازیکنان احترام بگذار.<br>۲. تقلب و خرابکاری نکن.<br>۳. قوانین اختصاصی سرور را رعایت کن.<br>۴. به ایجاد محیطی دوستانه کمک کن.</p></section>
+<footer>🍐 گلابی کرفت | ساخته‌شده با عشق به ماینکرفت</footer>
+</main>
+<script>
+async function copyAddress(){const address=document.getElementById('serverAddress').textContent.trim();const message=document.getElementById('message');if(!address||address==='آدرس سرور هنوز ثبت نشده'){message.textContent='⚠️ ابتدا باید آدرس واقعی سرور وارد شود.';return}try{await navigator.clipboard.writeText(address);message.textContent='✅ آدرس کپی شد!'}catch(e){message.textContent='لطفاً آدرس را دستی کپی کن.'}}
+</script></body></html>
