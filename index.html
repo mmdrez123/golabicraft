@@ -187,6 +187,38 @@ footer{margin-top:15px}
 @media(max-width:760px){.wrap{width:94%}.nav{padding:9px 0;flex-wrap:wrap}.links{max-width:100%;width:100%;order:3;overflow-x:auto;display:flex;padding:5px 0}.links a{font-size:.78rem}.hero{min-height:410px;padding:32px 20px;background-position:59% center}.hero h1{font-size:2.25rem}.hero .lead{max-width:95%}.stats{grid-template-columns:1fr;gap:8px}.stat{min-height:0}.vehicle-weapon-row{grid-template-columns:1fr 1fr}.side-caption{grid-column:1/-1;grid-row:1}.side-visual{min-height:100px}.side-visual img{max-height:100px}#features .feature-grid{grid-template-columns:repeat(3,minmax(0,1fr))}#features .card{min-height:95px}#daily-mission .adventure-panel{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-card{min-height:165px}}
 @media(max-width:480px){.hero{min-height:430px;padding:28px 15px}.hero h1{font-size:2rem}.hero .hero-perks span{font-size:.68rem}#features .feature-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.gallery-grid{grid-template-columns:1fr}.gallery-card{min-height:160px}}
 
+
+/* Neon motion polish — subtle, smooth, and accessible */
+@keyframes neonBreath {
+  0%,100% { box-shadow: 0 0 10px #62ff3930, 0 0 24px #62ff3912; }
+  50% { box-shadow: 0 0 18px #62ff3970, 0 0 42px #62ff3928; }
+}
+@keyframes cityGlow {
+  0%,100% { filter: saturate(1) brightness(.96); background-position: center center; }
+  50% { filter: saturate(1.13) brightness(1.08); background-position: 52% 48%; }
+}
+@keyframes pearBob {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+@keyframes neonShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+header .logo { animation: neonBreath 3.8s ease-in-out infinite; }
+.hero:before { animation: cityGlow 12s ease-in-out infinite; }
+.scene .scene-logo { animation: pearBob 4.5s ease-in-out infinite; }
+.btn.primary { background-size: 200% 100%; animation: neonShimmer 7s linear infinite; }
+#features .card, .gallery-card, .treasure-card {
+  transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+}
+#features .card:hover, .gallery-card:hover, .treasure-card:hover {
+  box-shadow: 0 0 0 1px #62ff3955, 0 0 26px #62ff392b, 0 16px 35px #0007;
+}
+@media (prefers-reduced-motion: reduce) {
+  header .logo, .hero:before, .scene .scene-logo, .btn.primary { animation: none !important; }
+  #features .card, .gallery-card, .treasure-card, .btn { transition: none !important; }
+}
 </style></head><body>
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div><header><div class="wrap nav"><a class="brand" href="./"><span class="logo">🍐</span><span>GOLABI<br>CRAFT</span></a><nav class="links"><a href="./">خانه 🏠</a><a href="#features">امکانات ★</a><a href="#daily-mission">ماموریت‌ها 🎯</a><a href="#gallery">گالری ▣</a><a href="./shop.html">فروشگاه 🛒</a><a href="./features.html">سرور و مودها ⚙</a><a href="#mod-search">جست‌وجو 🔎</a></nav><div style="display:flex;gap:8px;align-items:center"><a class="btn primary" href="#server-info">🎮 آشنایی با سرور</a></div></div></header>
 <main class="wrap"><section class="hero"><div class="hero-copy"><span class="pill">🍃 دنیای ماینکرفت Roleplay</span><h1>به دنیای نقش‌آفرینی<br><span>گلابی کرفت</span> خوش اومدی!</h1><p class="lead">یک سرور رول‌پلی کامل با شغل‌های متنوع، گنگ‌ها، اقتصاد پویا و امکانات بی‌نظیر برای ساختن داستان خودت!</p><div class="actions"><a class="btn primary" href="#server-info">▶ همین حالا وارد شو</a></div><div class="hero-perks"><span>🟢 آنلاین 24 ساعته</span><span>💚 پشتیبانی قوی</span><span>👥 جامعه فعال</span></div></div><div class="scene"><div class="scene-logo">🍐<strong>GOLABI<br>CRAFT</strong></div><div class="badge">شهر تو، داستان تو</div></div></section>
