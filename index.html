@@ -230,6 +230,8 @@ header .logo { animation: neonBreath 3.8s ease-in-out infinite; }
 .side-visual img{height:100%;min-height:130px;object-fit:cover;image-rendering:pixelated}
 .side-visual.weapon img{max-height:155px}
 @media(prefers-reduced-motion:reduce){.gallery-card>img{transition:none}}
+
+#modSearchResults{line-height:2} .search-results-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-top:10px}.search-result-link{display:block;padding:9px 12px;border:1px solid #31583b;border-radius:10px;background:#0b170e;color:#eaffdf}.search-result-link:hover{border-color:#a5ff78;background:#142719}
 </style></head><body>
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div><header><div class="wrap nav"><a class="brand" href="./"><span class="logo">🍐</span><span>GOLABI<br>CRAFT</span></a><nav class="links"><a href="./">خانه 🏠</a><a href="#features">امکانات ★</a><a href="#daily-mission">ماموریت‌ها 🎯</a><a href="#gallery">گالری ▣</a><a href="./shop.html">فروشگاه 🛒</a><a href="./features.html">سرور و مودها ⚙</a><a href="#mod-search">جست‌وجو 🔎</a></nav><div style="display:flex;gap:8px;align-items:center"><a class="btn primary" href="#server-info">🎮 آشنایی با سرور</a></div></div></header>
 <main class="wrap"><section class="hero"><div class="hero-copy"><span class="pill">🍃 دنیای ماینکرفت Roleplay</span><h1>به دنیای نقش‌آفرینی<br><span>گلابی کرفت</span> خوش اومدی!</h1><p class="lead">یک سرور رول‌پلی کامل با شغل‌های متنوع، گنگ‌ها، اقتصاد پویا و امکانات بی‌نظیر برای ساختن داستان خودت!</p><div class="actions"><a class="btn primary" href="#server-info">▶ همین حالا وارد شو</a></div><div class="hero-perks"><span>🟢 آنلاین 24 ساعته</span><span>💚 پشتیبانی قوی</span><span>👥 جامعه فعال</span></div></div><div class="scene"><div class="scene-logo">🍐<strong>GOLABI<br>CRAFT</strong></div><div class="badge">شهر تو، داستان تو</div></div></section>
@@ -257,7 +259,48 @@ addEventListener('scroll',updateScrollUI,{passive:true});addEventListener('resiz
 
 (()=>{const missions=['🚓 پلیس: یک بازیکن خلافکار را دستگیر کن.','🚑 امدادگر: یک بازیکن را نجات بده و به بیمارستان برسان.','🔧 مکانیک: ماشین یک بازیکن را تعمیر کن.','💰 اقتصاد: موجودی پولت را به 10,000 سکه برسان.','🏦 اقتصاد: یک شغل انجام بده و 2,000 سکه درآمد کسب کن.','🚗 رانندگی: یک ماشین بگیر و به مقصد مشخص‌شده برس.','🕵️ خلافکار: یک مأموریت مخفی را کامل کن و فرار کن.','👥 گروه‌ها: یک گروه بساز و دو عضو جذب کن.','🚕 راننده: یک مسافر را سالم به مقصد برسان.','🩺 پزشک: به دو بازیکن آسیب‌دیده کمک کن.','🚔 پلیس: یک تعقیب‌وگریز را بدون تصادف تمام کن.','🏠 املاک: یک خانه یا پلات بخر و آن را ارتقا بده.'];const text=document.getElementById('missionText'),done=document.getElementById('missionDone');let current=localStorage.getItem('golabiMission')||'';let score=Number(localStorage.getItem('golabiMissionScore')||0);if(current)text.textContent=current;document.getElementById('newMission').addEventListener('click',()=>{let next=missions[Math.floor(Math.random()*missions.length)];if(missions.length>1&&next===current)next=missions[(missions.indexOf(next)+1)%missions.length];current=next;localStorage.setItem('golabiMission',current);text.textContent=current;done.textContent='';});document.getElementById('completeMission').addEventListener('click',()=>{if(!current){done.textContent='اول یه مأموریت انتخاب کن!';return;}score++;localStorage.setItem('golabiMissionScore',String(score));done.textContent='آفرین! '+score+' مأموریت ثبت کردی. 🏆';current='';localStorage.removeItem('golabiMission');text.textContent='عالی بود! برای چالش بعدی مأموریت جدید بگیر.';});})();
 
-const modForm=document.getElementById('modSearchForm');
-if(modForm){modForm.addEventListener('submit',e=>{e.preventDefault();const q=document.getElementById('modSearchInput').value.trim().toLocaleLowerCase('fa');const out=document.getElementById('modSearchResults');if(!q){out.textContent='اول اسم مود یا موضوع رو وارد کن.';return;}const targets=[...document.querySelectorAll('#features .card,#weapons .card,#gallery .gallery-card,#daily-mission .adventure-panel,#server-info .banner')];const matches=targets.filter(el=>el.innerText.toLocaleLowerCase('fa').includes(q));if(!matches.length){out.textContent='موردی با این عبارت در محتوای فعلی سایت پیدا نشد. برای مودهای واقعی، فهرست مودهای نصب‌شدهٔ سرور هنوز باید اضافه شود.';return;}out.textContent='نتیجه‌ها: '+matches.map(el=>(el.querySelector('h3,h2')?.innerText||el.innerText).trim()).join('، ');matches[0].scrollIntoView({behavior:'smooth',block:'center'});});}
+/* Search: normalize Persian/Arabic characters and match useful site content */
+(()=>{
+ const form=document.getElementById('modSearchForm'),input=document.getElementById('modSearchInput'),out=document.getElementById('modSearchResults');
+ if(!form||!input||!out)return;
+ const normalize=s=>(s||'').toString().toLocaleLowerCase('fa')
+  .replace(/[يى]/g,'ی').replace(/ك/g,'ک').replace(/[ۀة]/g,'ه')
+  .replace(/[\u064B-\u065F\u0670\u0640]/g,'').replace(/\s+/g,' ').trim();
+ const aliases={
+  'ماشین':'ماشین خودرو رانندگی پراید ماشین پلیس','خودرو':'ماشین خودرو رانندگی',
+  'پلیس':'پلیس پلیس شهر افسر ماشین پلیس','تفنگ':'تفنگ اسلحه سلاح',
+  'پول':'اقتصاد سکه درآمد فروشگاه','مود':'مود مودها سرور و مودها',
+  'ماموریت':'ماموریت ماموریت ها چالش رول پلی','گالری':'گالری شهر تصاویر',
+  'خانه':'خانه املاک ساختمان شهر','دکتر':'دکتر پزشک امدادگر بیمارستان',
+  'مکانیک':'مکانیک تعمیر ماشین','گنگ':'گنگ گروه خلافکار'
+ };
+ const selectors=['#features .card','.feature-grid .card','.gallery-card','#daily-mission .mission-box','#daily-mission .adventure-panel','#server-info .banner','#mod-search'];
+ const targets=[...new Set(selectors.flatMap(sel=>[...document.querySelectorAll(sel)]))];
+ form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const q=normalize(input.value);
+  if(!q){out.textContent='اول یک کلمه مثل «ماشین»، «پلیس»، «اقتصاد» یا «مود» بنویس.';input.focus();return;}
+  const terms=q.split(' ').filter(Boolean);
+  const expanded=normalize(terms.map(t=>aliases[t]||t).join(' ')).split(' ').filter(Boolean);
+  const scored=targets.map(el=>{
+   const hay=normalize(el.innerText+' '+(el.getAttribute('aria-label')||'')+' '+[...el.querySelectorAll('img')].map(im=>im.alt).join(' '));
+   const score=terms.reduce((n,t)=>n+(hay.includes(t)?3:0),0)+expanded.reduce((n,t)=>n+(hay.includes(t)?1:0),0);
+   return {el,score};
+  }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score);
+  if(!scored.length){out.textContent='برای «'+q+'» نتیجه‌ای در محتوای فعلی سایت پیدا نشد. جست‌وجو فعلاً داخل همین سایت است و به فهرست مودهای نصب‌شدهٔ سرور وصل نیست.';return;}
+  out.replaceChildren();
+  const title=document.createElement('strong');title.textContent='نتیجه‌های جست‌وجو ('+scored.length+')';out.append(title);
+  const list=document.createElement('div');list.className='search-results-list';
+  scored.slice(0,8).forEach(({el})=>{
+   const a=document.createElement('a');a.className='search-result-link';
+   a.href='#'+(el.id||el.closest('section')?.id||'features');
+   a.textContent=(el.querySelector('h3,h2,strong')?.innerText||el.innerText).trim().replace(/\s+/g,' ').slice(0,100);
+   a.addEventListener('click',ev=>{ev.preventDefault();el.scrollIntoView({behavior:'smooth',block:'center'});el.style.outline='2px solid #a5ff78';setTimeout(()=>el.style.outline='',1500);});
+   list.append(a);
+  });
+  out.append(list);
+ });
+ input.addEventListener('search',()=>{if(!input.value.trim())out.textContent='عبارت جست‌وجو پاک شد.';});
+})();
 
 </script></body></html>
