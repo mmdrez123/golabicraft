@@ -288,6 +288,113 @@ a,button{cursor:pointer}
 @media(max-width:850px){.feature-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.hero{grid-template-columns:1fr;padding:24px 20px}.hero .scene{min-height:110px}.hero .scene-logo{font-size:2rem}.hero .scene-logo strong{font-size:1rem}}
 @media(max-width:560px){.links{gap:7px 10px;font-size:.72rem}.nav{padding:8px 0}.feature-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.adventure-panel{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-card,.gallery-card img{min-height:125px;height:125px}.hero h1{font-size:2rem}}
 
+
+/* Reference layout pass: unified cinematic page from top to footer */
+:root{--bg:#020b0a;--panel:#071713;--green:#67ff45;--muted:#bfd4cc;--line:#18583d}
+html{scroll-behavior:smooth}
+body{background:#020b0a;background-image:radial-gradient(ellipse at 50% -12%,#19472f 0,transparent 46%),linear-gradient(180deg,#020b0a,#06130f 58%,#020907);color:#f3fff7}
+.wrap{width:min(1180px,96%)}
+header{background:#020907ed;border-bottom:1px solid #35d86b55;box-shadow:0 7px 28px #0009}
+.nav{min-height:62px}
+.brand{font-size:1rem}
+.logo{width:38px;height:38px;border-radius:50%;box-shadow:0 0 22px #69ff4c77}
+.links{gap:17px;color:#d5e8dc;font-size:.82rem}
+.hero{position:relative;isolation:isolate;display:grid;grid-template-columns:1.15fr .85fr;gap:20px;min-height:290px;padding:28px 30px;margin:0 auto 0;width:min(1180px,96%);border:1px solid #26754c;border-radius:0 0 16px 16px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#020907f5 0%,#03100be8 35%,#03100b50 75%,#03100b20 100%),url('./assets/golabi-city.svg') center 48%/cover no-repeat}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#02090755,transparent 45%);pointer-events:none}
+.hero h1{font-size:clamp(2rem,4vw,3.15rem);line-height:1.35;margin:8px 0;text-shadow:0 4px 20px #000}
+.hero .lead{max-width:520px;font-size:.86rem;color:#d5e5dc}
+.hero .scene{min-height:220px;border:0;background:transparent;box-shadow:none;overflow:visible}
+.hero .scene:before,.hero .scene:after{display:none}
+.hero .pear-split{width:140px;height:140px;filter:drop-shadow(0 0 18px #7dff4b)}
+.hero .pear-split .half{font-size:6rem}
+.hero .badge{bottom:0;left:8px;background:#03100be8}
+.hero .pill{background:#03100bbd;border-color:#60ff4a77}
+.actions{margin-top:15px}
+.stats{display:none}
+.vehicle-weapon-row{grid-template-columns:1fr 1.4fr 1fr;margin:12px auto;width:min(1180px,96%);gap:10px}
+.side-visual{min-height:105px;background:#071710;border-color:#1b6844;border-radius:12px}
+.side-visual img{max-height:95px}
+.side-caption h2{font-size:1.1rem}
+.players-row{margin:12px auto;width:min(1180px,96%);gap:10px}
+.player-card{min-height:130px;border-radius:12px}
+.player-card img{height:100px}
+#features{width:min(1180px,96%);margin:10px auto 0;padding:13px 16px 16px;border:1px solid #1b6844;border-radius:15px;background:linear-gradient(110deg,#071a14,#09130f);box-shadow:0 12px 30px #0006}
+#features .heading{text-align:center;margin:0 0 10px}
+#features .heading h2{font-size:1.25rem}
+#features .heading p{font-size:.72rem;margin:0}
+.feature-grid{grid-template-columns:repeat(9,minmax(0,1fr));gap:8px}
+.feature-grid .card{min-height:75px;padding:8px 5px;text-align:center;border-radius:10px;background:linear-gradient(145deg,#13281f,#07130e);border-color:#1d6443}
+.feature-grid .card .tag{display:block;font-size:1.45rem;line-height:1.4;padding:0;margin:0;background:none;border:0}
+.feature-grid .card h3{font-size:.72rem;margin:2px 0 0}
+.feature-grid .card p{display:none}
+section{padding:20px 0 26px}
+.heading{margin-bottom:12px}
+.heading h2{font-size:1.35rem}
+.heading p{font-size:.8rem}
+#daily-mission{width:min(1180px,96%);margin:auto}
+.adventure-panel{grid-template-columns:.75fr 1.25fr;gap:15px;padding:17px;border-radius:15px;background:linear-gradient(100deg,#071b15,#101c31 65%,#07120e);border-color:#1d6846}
+.adventure-panel h2{font-size:1.2rem}
+.adventure-panel p{font-size:.78rem}
+.adventure-decor{font-size:2.5rem}
+.mission-box{padding:12px;border-radius:12px;background:#06120e;border-color:#1c6844}
+.mission-box strong{font-size:.9rem}
+.mission-box .mission-text{font-size:.8rem;min-height:38px}
+.mission-actions .btn{padding:7px 11px;font-size:.78rem}
+#gallery,#mod-search,#faq,#treasure-hunt,#server-info{width:min(1180px,96%);margin-left:auto;margin-right:auto}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.gallery-card{min-height:165px;border:1px solid #1c6844;border-radius:12px;background:#07140f;overflow:hidden}
+.gallery-card img{display:block;width:100%;height:165px;object-fit:cover}
+.gallery-card>div{padding:9px 12px}
+.gallery-card h3{font-size:.88rem;margin:0}
+.gallery-card p{font-size:.72rem;margin:0}
+#weapons .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+#mod-search .card{padding:14px;border-radius:13px}
+#modSearchInput{min-width:0;flex:1;background:#04110b;border:1px solid #1c6844;color:#fff;border-radius:9px;padding:10px;font:inherit}
+.search-results-list{display:grid;gap:6px;margin-top:10px}
+.search-result-link{display:block;padding:7px 10px;border:1px solid #1b6041;border-radius:8px;background:#0b1c14}
+.treasure-section{padding:17px;border-radius:15px;background:radial-gradient(ellipse at 85% 0%,#164a2b,transparent 50%),#06120d;border-color:#1d6846}
+.treasure-grid{gap:10px}
+.treasure-card{min-height:115px;padding:12px;border-radius:12px}
+.treasure-card .chest{font-size:2rem}
+.banner{padding:18px;border-radius:14px;background:linear-gradient(110deg,#0c301c,#06130e);border-color:#1c6844}
+footer{background:#020907;border-top:1px solid #1b5739}
+@media(max-width:850px){
+ .feature-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+ .hero{grid-template-columns:1fr;padding:22px;min-height:0}
+ .hero .scene{min-height:100px}
+ .hero .pear-split{width:95px;height:95px}
+ .hero .pear-split .half{font-size:4rem}
+ .adventure-panel{grid-template-columns:1fr}
+ .adventure-decor{display:none}
+}
+@media(max-width:560px){
+ .wrap{width:94%}
+ .nav{gap:8px;min-height:55px}
+ .links{display:flex;flex-wrap:wrap;gap:4px 9px;font-size:.68rem}
+ .brand{font-size:.8rem}
+ .logo{width:31px;height:31px}
+ .hero{width:94%;padding:18px;gap:8px}
+ .hero h1{font-size:1.9rem}
+ .hero .lead{font-size:.78rem}
+ .hero .scene{min-height:65px;place-items:center start}
+ .hero .pear-split{display:none}
+ .vehicle-weapon-row{grid-template-columns:1fr 1fr}
+ .side-caption{grid-column:1/-1;grid-row:1}
+ .side-visual{min-height:95px}
+ .side-visual img{max-height:78px}
+ .players-row{grid-template-columns:1fr 1fr}
+ .players-caption{grid-column:1/-1;grid-row:1}
+ .player-card{min-height:115px}
+ .player-card img{height:75px}
+ .feature-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .gallery-grid{grid-template-columns:1fr 1fr}
+ .gallery-card,.gallery-card img{min-height:125px;height:125px}
+ #weapons .grid{grid-template-columns:1fr}
+ .stats{display:none}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+
 </style></head><body>
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div><header><div class="wrap nav"><a class="brand" href="./"><span class="logo">🍐</span><span>GOLABI<br>CRAFT</span></a><nav class="links"><a href="./">خانه 🏠</a><a href="#features">امکانات ★</a><a href="#daily-mission">ماموریت‌ها 🎯</a><a href="#gallery">گالری ▣</a><a href="./shop.html">فروشگاه 🛒</a><a href="./features.html">سرور و مودها ⚙</a><a href="#mod-search">جست‌وجو 🔎</a></nav><div style="display:flex;gap:8px;align-items:center"><a class="btn primary" href="#server-info">🎮 آشنایی با سرور</a></div></div></header>
 <main class="wrap"><section class="hero"><div class="hero-copy"><span class="pill">🍃 دنیای ماینکرفت Roleplay</span><h1>به دنیای نقش‌آفرینی<br><span>گلابی کرفت</span> خوش اومدی!</h1><p class="lead">یک سرور رول‌پلی کامل با شغل‌های متنوع، گنگ‌ها، اقتصاد پویا و امکانات بی‌نظیر برای ساختن داستان خودت!</p><div class="actions"><a class="btn primary" href="#server-info">▶ همین حالا وارد شو</a></div><div class="hero-perks"><span>🟢 آنلاین 24 ساعته</span><span>💚 پشتیبانی قوی</span><span>👥 جامعه فعال</span></div></div><div class="scene"><div class="scene-logo">🍐<strong>GOLABI<br>CRAFT</strong></div><div class="badge">شهر تو، داستان تو</div></div></section>
