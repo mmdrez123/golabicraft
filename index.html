@@ -17,15 +17,40 @@ header{height:82px;background:#10150feF;border-bottom:1px solid #ffffff20;displa
 section.content{padding:85px 0}.section-head{text-align:center;margin:0 auto 35px}.section-head small{color:var(--lime);font-weight:900}.section-head h2{font-size:2.25rem;margin:6px 0}.section-head p{color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{min-height:220px;padding:25px;border:1px solid #ffffff20;border-radius:12px;background:linear-gradient(145deg,#202d20,#151c17);position:relative;overflow:hidden;transition:.2s}.card:hover{transform:translateY(-5px);border-color:#a9ef3577}.card .icon{font-size:48px}.card h3{margin:8px 0}.card p{color:var(--muted);line-height:1.9;margin:0}.card .label{display:inline-block;margin-top:18px;color:var(--lime);font-weight:800;font-size:.9rem}
 .store{background:#151c17;border-block:1px solid #ffffff15}.price{font-size:1rem;color:var(--lime);font-weight:900;margin-top:15px}.challenge{background:linear-gradient(135deg,#19251a,#26233a)}.challenge .icon{filter:drop-shadow(0 4px 9px #0008)}
 footer{border-top:1px solid #ffffff20;padding:28px 0;color:var(--muted)}.foot{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}.foot b{color:var(--lime)}
+
+.gc-trailer-section{background:linear-gradient(180deg,#10150f,#141e15);border-block:1px solid #ffffff12}
+.gc-video-box{max-width:1000px;margin:0 auto;overflow:hidden;border:2px solid var(--lime);border-radius:16px;background:#000;box-shadow:0 0 35px #a9ef3530}
+.gc-video-box video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#000}
+.gc-trailer-footer{max-width:1000px;margin:15px auto 0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:.85rem}
 @media(max-width:850px){.nav{flex-wrap:wrap;padding:10px 0}header{height:auto;min-height:76px}nav{order:3;width:100%;justify-content:center;gap:17px;font-size:.9rem}.join{display:none}.quick{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:repeat(2,1fr)}.hero{min-height:600px}}
 @media(max-width:540px){.hero-character{height:44%;max-width:70%;left:50%;transform:translateX(-50%)}.brand{font-size:1.25rem}nav{gap:13px;font-size:.82rem}.hero{min-height:590px}.hero-inner{padding:75px 0 125px}h1{font-size:3.15rem}.intro{font-size:1rem}.quick{grid-template-columns:1fr 1fr;gap:9px}.quick a{padding:13px 10px;gap:8px}.quick i{font-size:26px}.quick small{font-size:.72rem}.cards{grid-template-columns:1fr}.section-head h2{font-size:1.8rem}.foot{justify-content:center;text-align:center}}
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="#home"><span class="pear">🍐</span><span>گلابی<b>‌کرفت</b></span></a><nav><a href="#home">خانه</a><a href="#store">فروشگاه</a><a href="#challenges">چالش‌ها</a><a href="#adventures">ماجراجویی‌ها</a></nav><a class="join" href="#adventures">شروع ماجراجویی ←</a></div></header>
+<header><div class="wrap nav"><a class="brand" href="#home"><span class="pear">🍐</span><span>گلابی<b>‌کرفت</b></span></a><nav><a href="#home">خانه</a><a href="#trailer">تریلر</a><a href="#store">فروشگاه</a><a href="#challenges">چالش‌ها</a><a href="#adventures">ماجراجویی‌ها</a></nav><a class="join" href="#adventures">شروع ماجراجویی ←</a></div></header>
 <main>
 <section class="hero" id="home"><div class="pixel-hills"></div><img class="hero-character" src="images/golabicraft-warrior.png" alt="شخصیت ماینکرفتی با شمشیر"><div class="wrap hero-inner"><span class="eyebrow">دنیای ماینکرفت، بدون مرز</span><h1>به <span>گلابی‌کرفت</span><br>خوش اومدی!</h1><p class="intro">وارد نقش خودت شو؛ شهر بساز، خلافکار شو، مأموریت انجام بده و با دوستات توی دنیای ماینکرفتی گلابی‌کرفت ماجراجویی کن!</p><div class="actions"><a class="btn" href="#adventures">شروع ماجراجویی</a><a class="btn secondary" href="#store">دیدن فروشگاه</a></div></div></section>
 <div class="wrap quick"><a href="#challenges"><i>🏆</i><div><strong>چالش‌ها</strong><small>رقابت و جایزه</small></div></a><a href="#store"><i>🛒</i><div><strong>فروشگاه</strong><small>آیتم‌های ویژه</small></div></a><a href="#adventures"><i>⚔️</i><div><strong>ماجراجویی‌ها</strong><small>دنیای تازه منتظرته</small></div></a><a href="#servers"><i>🌐</i><div><strong>سرورها</strong><small>جاوا و اندروید</small></div></a></div>
+
+<section class="content gc-trailer-section" id="trailer">
+  <div class="wrap">
+    <div class="section-head">
+      <small>GOLABICRAFT CINEMATIC</small>
+      <h2>تریلر گلابی‌کرفت</h2>
+      <p>دنیایی تازه، ماجراجویی‌های بی‌پایان و داستانی که خودت می‌سازی!</p>
+    </div>
+    <div class="gc-video-box">
+      <video controls playsinline preload="metadata">
+        <source src="./videos/trailer.mp4" type="video/mp4">
+        مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.
+      </video>
+    </div>
+    <div class="gc-trailer-footer">
+      <span>🍐 GolabiCraft</span>
+      <span>ماجراجویی تو از اینجا شروع می‌شود</span>
+    </div>
+  </div>
+</section>
 <section class="content" id="adventures"><div class="wrap"><div class="section-head"><small>وقت ماجراجوییه</small><h2>ماجراجویی بعدی تو چیه؟</h2><p>یکی رو انتخاب کن و وارد بازی شو.</p></div><div class="cards"><article class="card"><div class="icon">🎭</div><h3>رول‌پلی (Roleplay)</h3><p>یک شخصیت انتخاب کن، زندگی خودت رو توی شهر بساز و داستان مخصوص خودت رو بازی کن.</p><a class="label" href="#servers">ورود به رول‌پلی ←</a></article><article class="card"><div class="icon">🕶️</div><h3>خلافکاری و تعقیب‌وگریز</h3><p>نقش خلافکار رو بازی کن، مأموریت انجام بده و از دست پلیس فرار کن.</p><a class="label" href="#servers">شروع مأموریت ←</a></article><article class="card"><div class="icon">🚓</div><h3>پلیس و شهروندی</h3><p>از شهر محافظت کن، قانون رو اجرا کن یا زندگی روزمره‌ات رو در شهر ادامه بده.</p><a class="label" href="#servers">انتخاب نقش ←</a></article></div></div></section>
 <section class="content store" id="store"><div class="wrap"><div class="section-head"><small>بازار گلابی‌کرفت</small><h2>فروشگاه</h2><p>بخش فروشگاه برای آیتم‌ها و امکانات ویژه.</p></div><div class="cards"><article class="card"><div class="icon">🎒</div><h3>آیتم‌های ویژه</h3><p>وسایل جذاب برای شخصی‌سازی تجربه بازی.</p><div class="price">به‌زودی</div></article><article class="card"><div class="icon">💎</div><h3>بسته‌های گلابی</h3><p>بسته‌های اختصاصی دنیای گلابی‌کرفت.</p><div class="price">به‌زودی</div></article><article class="card"><div class="icon">🎁</div><h3>هدیه‌ها</h3><p>پیشنهادها و جایزه‌های ویژه جامعه بازیکنان.</p><div class="price">به‌زودی</div></article></div></div></section>
 <section class="content" id="challenges"><div class="wrap"><div class="section-head"><small>خودتو به چالش بکش</small><h2>چالش‌های گلابی‌کرفت</h2><p>برای رقابت آماده‌ای؟</p></div><div class="cards"><article class="card challenge"><div class="icon">🏆</div><h3>چالش هفتگی</h3><p>هر هفته یک مأموریت تازه برای ساختن و خلاقیت.</p><span class="label">به‌زودی</span></article><article class="card challenge"><div class="icon">⚔️</div><h3>نبرد دوستانه</h3><p>مهارتت رو در رقابت‌های دوستانه امتحان کن.</p><span class="label">به‌زودی</span></article><article class="card challenge"><div class="icon">🧩</div><h3>معمای بقا</h3><p>با فکر و همکاری از مرحله‌های سخت عبور کن.</p><span class="label">به‌زودی</span></article></div></div></section>
