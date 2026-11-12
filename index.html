@@ -24,6 +24,26 @@ footer{border-top:1px solid #ffffff20;padding:28px 0;color:var(--muted)}.foot{di
 .gc-trailer-footer{max-width:1000px;margin:15px auto 0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:.85rem}
 @media(max-width:850px){.nav{flex-wrap:wrap;padding:10px 0}header{height:auto;min-height:76px}nav{order:3;width:100%;justify-content:center;gap:17px;font-size:.9rem}.join{display:none}.quick{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:repeat(2,1fr)}.hero{min-height:600px}}
 @media(max-width:540px){.hero-character{height:44%;max-width:70%;left:50%;transform:translateX(-50%)}.brand{font-size:1.25rem}nav{gap:13px;font-size:.82rem}.hero{min-height:590px}.hero-inner{padding:75px 0 125px}h1{font-size:3.15rem}.intro{font-size:1rem}.quick{grid-template-columns:1fr 1fr;gap:9px}.quick a{padding:13px 10px;gap:8px}.quick i{font-size:26px}.quick small{font-size:.72rem}.cards{grid-template-columns:1fr}.section-head h2{font-size:1.8rem}.foot{justify-content:center;text-align:center}}
+
+/* Demo store */
+.store-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 20px}
+.store-note{color:#d9e8cd;background:#24321f;border:1px solid #a9ef3566;border-radius:9px;padding:10px 14px;font-size:.88rem}
+.cart-btn,.buy-btn{border:0;cursor:pointer;font:inherit;font-weight:900;border-radius:8px;background:var(--lime);color:#10170b;padding:10px 16px}
+.store-product{display:flex;flex-direction:column}
+.store-product .buy-btn{margin-top:18px;width:100%}
+.store-product .price{margin-top:auto;padding-top:15px}
+.cart-count{display:inline-grid;place-items:center;background:#10150f;color:var(--lime);border-radius:50%;width:23px;height:23px;margin-right:5px}
+.demo-cart{margin-top:20px;padding:22px;background:#111812;border:1px solid #a9ef3566;border-radius:12px;display:none}
+.demo-cart.open{display:block}
+.cart-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #ffffff18}
+.cart-row button{border:0;background:#402222;color:#ffdada;border-radius:6px;padding:5px 9px;cursor:pointer}
+.cart-total{font-size:1.1rem;font-weight:900;color:var(--lime);margin:18px 0}
+.demo-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}
+.demo-form input{min-width:0;width:100%;padding:12px;border-radius:8px;border:1px solid #ffffff30;background:#202a21;color:white;font:inherit}
+.demo-form button{grid-column:1/-1}
+.demo-result{margin-top:15px;padding:14px;border-radius:8px;background:#24321f;color:#eaffd5;display:none;line-height:1.9}
+@media(max-width:540px){.demo-form{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -52,9 +72,51 @@ footer{border-top:1px solid #ffffff20;padding:28px 0;color:var(--muted)}.foot{di
   </div>
 </section>
 <section class="content" id="adventures"><div class="wrap"><div class="section-head"><small>وقت ماجراجوییه</small><h2>ماجراجویی بعدی تو چیه؟</h2><p>یکی رو انتخاب کن و وارد بازی شو.</p></div><div class="cards"><article class="card"><div class="icon">🎭</div><h3>رول‌پلی (Roleplay)</h3><p>یک شخصیت انتخاب کن، زندگی خودت رو توی شهر بساز و داستان مخصوص خودت رو بازی کن.</p><a class="label" href="#servers">ورود به رول‌پلی ←</a></article><article class="card"><div class="icon">🕶️</div><h3>خلافکاری و تعقیب‌وگریز</h3><p>نقش خلافکار رو بازی کن، مأموریت انجام بده و از دست پلیس فرار کن.</p><a class="label" href="#servers">شروع مأموریت ←</a></article><article class="card"><div class="icon">🚓</div><h3>پلیس و شهروندی</h3><p>از شهر محافظت کن، قانون رو اجرا کن یا زندگی روزمره‌ات رو در شهر ادامه بده.</p><a class="label" href="#servers">انتخاب نقش ←</a></article></div></div></section>
-<section class="content store" id="store"><div class="wrap"><div class="section-head"><small>بازار گلابی‌کرفت</small><h2>فروشگاه</h2><p>بخش فروشگاه برای آیتم‌ها و امکانات ویژه.</p></div><div class="cards"><article class="card"><div class="icon">🎒</div><h3>آیتم‌های ویژه</h3><p>وسایل جذاب برای شخصی‌سازی تجربه بازی.</p><div class="price">به‌زودی</div></article><article class="card"><div class="icon">💎</div><h3>بسته‌های گلابی</h3><p>بسته‌های اختصاصی دنیای گلابی‌کرفت.</p><div class="price">به‌زودی</div></article><article class="card"><div class="icon">🎁</div><h3>هدیه‌ها</h3><p>پیشنهادها و جایزه‌های ویژه جامعه بازیکنان.</p><div class="price">به‌زودی</div></article></div></div></section>
+<section class="content store" id="store"><div class="wrap"><div class="section-head"><small>بازار گلابی‌کرفت</small><h2>فروشگاه آزمایشی</h2><p>محصولات را انتخاب کن، به سبد اضافه کن و یک سفارش تستی ثبت کن.</p></div>
+<div class="store-tools"><div class="store-note">🧪 حالت آزمایشی: قیمت‌ها نمایشی‌اند و هیچ پرداخت یا تحویل واقعی انجام نمی‌شود.</div><button class="cart-btn" id="toggleCart" type="button">🛒 سبد خرید <span class="cart-count" id="cartCount">۰</span></button></div>
+<div class="cards">
+<article class="card store-product"><div class="icon">🍐</div><h3>رتبه گلابی</h3><p>دسترسی به امکانات و ظاهر ویژه در سرور.</p><div class="price">۵۰٬۰۰۰ تومان آزمایشی</div><button class="buy-btn" data-id="golabi" data-name="رتبه گلابی" data-price="50000">افزودن به سبد</button></article>
+<article class="card store-product"><div class="icon">💎</div><h3>بسته ۱۰۰۰ سکه</h3><p>یک بسته فرضی سکه برای خریدهای درون بازی.</p><div class="price">۳۰٬۰۰۰ تومان آزمایشی</div><button class="buy-btn" data-id="coins" data-name="بسته ۱۰۰۰ سکه" data-price="30000">افزودن به سبد</button></article>
+<article class="card store-product"><div class="icon">🚗</div><h3>خودروی ویژه</h3><p>یک خودروی نمایشی برای فروشگاه رول‌پلی.</p><div class="price">۸۰٬۰۰۰ تومان آزمایشی</div><button class="buy-btn" data-id="car" data-name="خودروی ویژه" data-price="80000">افزودن به سبد</button></article>
+</div>
+<div class="demo-cart" id="demoCart"><h3>🛍️ سبد خرید آزمایشی</h3><div id="cartItems">سبد خرید خالی است.</div><div class="cart-total" id="cartTotal">مجموع: ۰ تومان</div>
+<form class="demo-form" id="demoOrderForm"><input id="buyerName" placeholder="نام خریدار" required maxlength="40"><input id="minecraftName" placeholder="نام کاربری ماینکرفت" required maxlength="16" pattern="[A-Za-z0-9_]{3,16}" title="نام کاربری ۳ تا ۱۶ حرف انگلیسی، عدد یا _"><button class="buy-btn" type="submit">ثبت سفارش آزمایشی</button></form>
+<div class="demo-result" id="demoResult" role="status" aria-live="polite"></div>
+</div></div></section>
 <section class="content" id="challenges"><div class="wrap"><div class="section-head"><small>خودتو به چالش بکش</small><h2>چالش‌های گلابی‌کرفت</h2><p>برای رقابت آماده‌ای؟</p></div><div class="cards"><article class="card challenge"><div class="icon">🏆</div><h3>چالش هفتگی</h3><p>هر هفته یک مأموریت تازه برای ساختن و خلاقیت.</p><span class="label">به‌زودی</span></article><article class="card challenge"><div class="icon">⚔️</div><h3>نبرد دوستانه</h3><p>مهارتت رو در رقابت‌های دوستانه امتحان کن.</p><span class="label">به‌زودی</span></article><article class="card challenge"><div class="icon">🧩</div><h3>معمای بقا</h3><p>با فکر و همکاری از مرحله‌های سخت عبور کن.</p><span class="label">به‌زودی</span></article></div></div></section>
 <section class="content" id="servers" style="padding-top:0"><div class="wrap"><div class="section-head"><small>همراه هم بازی کنیم</small><h2>سرورهای گلابی‌کرفت</h2><p>پشتیبانی از تجربه جاوا و اندروید؛ جزئیات اتصال به‌زودی اضافه می‌شود.</p></div></div></section>
 </main>
 <footer><div class="wrap foot"><strong>🍐 گلابی‌<b>کرفت</b></strong><span>© ۲۰۲۶ گلابی‌کرفت</span><a href="#home">بازگشت به بالا ↑</a></div></footer>
+
+<script>
+(()=>{
+ const cart = new Map();
+ const $ = id => document.getElementById(id);
+ const fmt = n => new Intl.NumberFormat('fa-IR').format(n);
+ function render(){
+   $('cartCount').textContent=fmt([...cart.values()].reduce((a,p)=>a+p.qty,0));
+   const entries=[...cart.values()];
+   $('cartItems').innerHTML=entries.length?entries.map(p=>'<div class="cart-row"><span>'+p.name+' × '+fmt(p.qty)+'</span><span>'+fmt(p.price*p.qty)+' تومان <button type="button" data-remove="'+p.id+'">حذف</button></span></div>').join(''):'سبد خرید خالی است.';
+   $('cartTotal').textContent='مجموع: '+fmt(entries.reduce((a,p)=>a+p.price*p.qty,0))+' تومان';
+ }
+ document.addEventListener('click',e=>{
+   const add=e.target.closest('[data-id]');
+   if(add){const id=add.dataset.id;const old=cart.get(id);cart.set(id,{id,name:add.dataset.name,price:Number(add.dataset.price),qty:(old?.qty||0)+1});$('demoResult').style.display='none';render();$('demoCart').classList.add('open');}
+   const remove=e.target.closest('[data-remove]');
+   if(remove){cart.delete(remove.dataset.remove);render();}
+ });
+ $('toggleCart').addEventListener('click',()=>$('demoCart').classList.toggle('open'));
+ $('demoOrderForm').addEventListener('submit',e=>{
+   e.preventDefault();
+   if(!cart.size){$('demoResult').textContent='اول یک محصول به سبد خرید اضافه کن.';$('demoResult').style.display='block';return;}
+   const order='GC-TEST-'+Math.random().toString(36).slice(2,8).toUpperCase();
+   const products=[...cart.values()].map(p=>p.name+' × '+p.qty).join('، ');
+   const total=[...cart.values()].reduce((a,p)=>a+p.price*p.qty,0);
+   $('demoResult').innerHTML='<strong>✅ سفارش آزمایشی ثبت شد!</strong><br>شماره سفارش: <b>'+order+'</b><br>خریدار: '+$('buyerName').value.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))+'<br>نام کاربری: '+$('minecraftName').value.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))+'<br>محصولات: '+products+'<br>مجموع نمایشی: '+fmt(total)+' تومان<br><small>این فقط شبیه‌سازی است؛ پولی دریافت نشده و محصولی به بازی ارسال نمی‌شود.</small>';
+   $('demoResult').style.display='block';cart.clear();render();
+ });
+ render();
+})();
+</script>
+
 </body></html>
